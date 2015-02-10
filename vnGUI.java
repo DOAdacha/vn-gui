@@ -13,6 +13,7 @@ import java.util.HashMap;
 
 public class vnGUI extends JFrame implements ActionListener{
 	private JButton skip, auto, save, config, load, qSave, qLoad;
+	private ArrayList<JButton> buttons = new ArrayList<JButton>();
 	
 	
 	public vnGUI(){
@@ -37,25 +38,29 @@ public class vnGUI extends JFrame implements ActionListener{
 		qSave = new JButton("Q Save");
 		qLoad = new JButton("Q Load");
 		
-		skip.setForeground(new Color(0,51,102));
-		skip.setBackground(new Color(224,224,224));
+		//add buttons to array
+		buttons.add(skip);
+		buttons.add(auto);
+		buttons.add(save);
+		buttons.add(config);
+		buttons.add(load);
+		buttons.add(qSave);
+		buttons.add(qLoad);
 		
-		//creating borders for buttons
-		Border line = new LineBorder(Color.BLACK);
-		Border margin = new EmptyBorder(5,15,5,15);
-		Border compound = new CompoundBorder(line, margin);
-		skip.setBorder(compound);
-		//config.setBorder(compound);
-		config.setPreferredSize(new Dimension(60,25));
-		skip.setPreferredSize(new Dimension(60,25));
-		auto.setPreferredSize(new Dimension(60,25));
-		save.setPreferredSize(new Dimension(60,25));
-		load.setPreferredSize(new Dimension(60,25));
-		qSave.setPreferredSize(new Dimension(60,25));
-		qLoad.setPreferredSize(new Dimension(60,25));
-		config.setFont(new Font("Calibri", Font.BOLD,8));
+		//change colors of buttons
+		for(JButton x: buttons){
+			buttonSetup(x);
+		}
 		
 		
+		//setup of prefSize and fonts
+		buttonFontDimSetup(config, 70, 30, 10);
+		buttonFontDimSetup(skip, 65, 30, 12);
+		buttonFontDimSetup(auto, 60, 30, 12);
+		buttonFontDimSetup(save, 63, 30, 12);
+		buttonFontDimSetup(load, 62, 30, 12);
+		buttonFontDimSetup(qSave, 70, 30, 9);
+		buttonFontDimSetup(qLoad, 70, 30, 10);
 		
 		//adds left to right pushing father left as it goes
 		
@@ -73,6 +78,26 @@ public class vnGUI extends JFrame implements ActionListener{
 		this.setSize(700,700);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+	}
+	
+	//only used for the general buttons at the bottom of screen
+	//only sets up colors and flat borders
+	public void buttonSetup(JButton x){
+		//setting up colors
+		x.setForeground(new Color(0,51,102));
+		x.setBackground(new Color(224,224,224));
+		
+		//creating borders for buttons
+		Border line = new LineBorder(Color.BLACK);
+		Border margin = new EmptyBorder(5,15,5,15);
+		Border compound = new CompoundBorder(line, margin);
+		
+		x.setBorder(compound);
+	}
+	
+	public void buttonFontDimSetup(JButton button, int xDim, int yDim, int fSize){
+		button.setPreferredSize(new Dimension(xDim,yDim));
+		button.setFont(new Font("",Font.BOLD,fSize));
 	}
 
 	public static void main(String[] args) {new vnGUI();}
