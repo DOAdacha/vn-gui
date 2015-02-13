@@ -14,6 +14,7 @@ import java.util.HashMap;
 public class vnGUI extends JFrame implements ActionListener{
 	private JButton skip, auto, save, config, load, qSave, qLoad;
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
+	private JPanel textPanel = new JPanel();
 	
 	
 	public vnGUI(){
@@ -26,7 +27,8 @@ public class vnGUI extends JFrame implements ActionListener{
 		
 		holder.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		
-		
+		textPanel.setLayout(new OverlayLayout(textPanel));
+		textPanel.add(holder);
 		
 		
 		//creating general buttons
@@ -72,7 +74,7 @@ public class vnGUI extends JFrame implements ActionListener{
 		holder.add(qSave);
 		holder.add(qLoad);
 		
-		this.add(holder,BorderLayout.SOUTH);
+		this.add(textPanel,BorderLayout.SOUTH);
 		
 		
 		this.setSize(700,700);
@@ -93,12 +95,27 @@ public class vnGUI extends JFrame implements ActionListener{
 		Border compound = new CompoundBorder(line, margin);
 		
 		x.setBorder(compound);
+		
+		
+		Border line2 = new LineBorder(Color.BLACK);
+		Border margin2 = new EmptyBorder(300,500,300,500);
+		Border compound2 = new CompoundBorder(line2,margin2);
+		
+		//textPanel.setBorder(compound2);
 	}
 	
 	public void buttonFontDimSetup(JButton button, int xDim, int yDim, int fSize){
 		button.setPreferredSize(new Dimension(xDim,yDim));
 		button.setFont(new Font("",Font.BOLD,fSize));
 	}
+	
+	
+	
+	
+	
+	
+	
+	/***********************NEED TO WORK ON A REPAINT FUNC*****************************/
 
 	public static void main(String[] args) {new vnGUI();}
 
