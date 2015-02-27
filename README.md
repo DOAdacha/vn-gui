@@ -11,3 +11,11 @@ skills needs to have the buff itterations moved to a future character/mob class
 feels strange to hold the buff itterations inside of the skills class
 added itterations of an attribute data type, removed old String usage of attributes
 attributes are now included with factors against weaknesses and strengths and have a small circle in which they interact
+
+2/26/15
+Created Armor and Character class
+armor class refers to the armor that the character is wearing and damageReduction will reduce the amount of damage that the character takes by 1 for every point of damageReduction that the armor has.
+Added a defense buff, will increase the amount of damageReduction that the character has
+Character class refers to characters in the game including: main characters, side characters
+TO DO :
+GUI still needs to be worked on to be made into working condition, code needs to be cleaned up so that everything is in it's proper area, mob class needs to be changed so that "epic"/"legendary" class mobs can be spawned with stronger damage and damageReduction than when encountered before.
