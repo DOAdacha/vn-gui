@@ -19,3 +19,9 @@ Added a defense buff, will increase the amount of damageReduction that the chara
 Character class refers to characters in the game including: main characters, side characters
 TO DO :
 GUI still needs to be worked on to be made into working condition, code needs to be cleaned up so that everything is in it's proper area, mob class needs to be changed so that "epic"/"legendary" class mobs can be spawned with stronger damage and damageReduction than when encountered before.
+
+
+3/9/15
+Working on Slick2D tutorials.
+Decided to implement Slick2D as the interface for the GUI.
+Decide whether to use a JPG text format or the built in slick drawString format for next work date
