@@ -25,3 +25,10 @@ GUI still needs to be worked on to be made into working condition, code needs to
 Working on Slick2D tutorials.
 Decided to implement Slick2D as the interface for the GUI.
 Decide whether to use a JPG text format or the built in slick drawString format for next work date
+
+
+3/12/15
+Decided to use JPG text format instead of slicks built in drawString format.
+May change to another text format to simulate the "typing text" of normal VN's.
+Got InputProvider working 
+Text is able to be changed using clicking and rendering
