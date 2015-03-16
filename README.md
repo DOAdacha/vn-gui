@@ -32,3 +32,11 @@ Decided to use JPG text format instead of slicks built in drawString format.
 May change to another text format to simulate the "typing text" of normal VN's.
 Got InputProvider working 
 Text is able to be changed using clicking and rendering
+
+
+3/16/15
+Able to switch background and text scenes now
+Text and Images are now changed using clicking and rendering
+Switches by changing the current Scene and TextBox in imageSwitching.java
+added accessors and a switchScene function to imageSwitching
+implemented the switching into the tutGame
